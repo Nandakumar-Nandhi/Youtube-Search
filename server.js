@@ -10,11 +10,12 @@ search_btn.addEventListener("click", function() {
     const xhttp = new XMLHttpRequest();
     if(search_input.value){
         xhttp.open("GET", "https://www.googleapis.com/youtube/v3/search?key=" + api_key + "&type=video&part=snippet&maxResults=" + maxResults + `&q=${search_input.value}`);
-        xhttp.send();
+        
         xhttp.onload = function(){
             var data = JSON.parse(xhttp.responseText);
             displayVideos(data); 
         }
+        xhttp.send();
     }
     else{
         data.innerHTML="Inavlid Request";
