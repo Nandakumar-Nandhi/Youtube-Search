@@ -36,7 +36,6 @@ function displayVideos(data){
 
         const http = new XMLHttpRequest();
         http.open("GET", "https://www.googleapis.com/youtube/v3/videos?key=" + api_key + "&id=" + item.id.videoId + "&part=snippet,statistics");
-        http.send();
         var viewCount = 0;
         http.onload = function () {
             const data = JSON.parse(http.responseText);
@@ -55,6 +54,7 @@ function displayVideos(data){
             views.innerHTML = `<strong>Views :</strong> ${viewCount}`;
             videoDescription.append(views);
         }
+        http.send();
         videoDiv.append(videoContainer);
     });
     var paginList = document.getElementById("pagination");
