@@ -36,10 +36,7 @@ function displayVideos(data){
 
         const http = new XMLHttpRequest();
         http.open("GET", "https://www.googleapis.com/youtube/v3/videos?key=" + api_key + "&id=" + item.id.videoId + "&part=snippet,statistics");
-<<<<<<< HEAD
-=======
         
->>>>>>> 31db4c8c3bfb9484482b4add7ea05b9829d8d187
         var viewCount = 0;
         http.onload = function () {
             const data = JSON.parse(http.responseText);

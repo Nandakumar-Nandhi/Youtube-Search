@@ -15,7 +15,7 @@ search_btn.addEventListener("click", function() {
             var data = JSON.parse(xhttp.responseText);
             displayVideos(data); 
         }
-        xhttp.send();
+        
     }
     else{
         data.innerHTML="Inavlid Request";
