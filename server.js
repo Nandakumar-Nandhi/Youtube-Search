@@ -11,6 +11,10 @@ search_btn.addEventListener("click", function() {
     if(search_input.value){
         xhttp.open("GET", "https://www.googleapis.com/youtube/v3/search?key=" + api_key + "&type=video&part=snippet&maxResults=" + maxResults + `&q=${search_input.value}`);
         
+        xhttp.onprogress=function(){
+
+            document.getElementById("videos").append(`Loading...`);
+        }
         xhttp.onload = function(){
             var data = JSON.parse(xhttp.responseText);
             displayVideos(data); 
