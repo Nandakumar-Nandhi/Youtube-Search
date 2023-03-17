@@ -41,26 +41,7 @@ function updateNextItems(data){
     generateRecords(data.nextPageToken);
 }
 
-/*
-function paginationButton(page,data){
-    let button=document.createElement('button');
-    button.innerHTML=page;
 
-    if(currentPage===page){
-        button.classList.add('active');
-    }
-
-    button.addEventListener('click',function(){
-        currentPage=page;
-        generateRecords(data.nextPageToken);
-        let current_btn=document.querySelector('.pagenumbers button.active');
-        current_btn.classList.remove('active');
-        
-        button.classList.add('active');
-    });
-
-    return button;
-}*/
 
 
 function apply_pagination(wrapper,data) {
@@ -69,16 +50,10 @@ function apply_pagination(wrapper,data) {
 
     let prevBtn=clickPrevButton(data);
     wrapper.appendChild(prevBtn);
-/*
-    for(let i=1;i<=10;i++){
-       let btn=paginationButton(i,data);
-       if(btn){
-            wrapper.appendChild(btn);
-       }
-    }x*/
 
     let button=document.createElement("button");
     button.innerText=currentPage;
+    
     button.setAttribute("class","button");
     wrapper.appendChild(button);
     let nextBtn=clickNextButton(data);
