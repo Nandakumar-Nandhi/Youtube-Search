@@ -6,7 +6,7 @@ var paginList=getElement("#pagination");
 var search_btn=getElement(".search-btn");
 
 
-
+if(search_btn)
 search_btn.addEventListener('click',function(event){
         event.preventDefault();
         let searchText=getElement(".search-input").value;
