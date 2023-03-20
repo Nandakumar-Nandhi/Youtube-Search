@@ -53,9 +53,9 @@ function apply_pagination(wrapper,data) {
 
     let button=document.createElement("button");
     button.innerText=currentPage;
-    
     button.setAttribute("class","button");
     wrapper.appendChild(button);
+
     let nextBtn=clickNextButton(data);
     wrapper.appendChild(nextBtn);
 }
